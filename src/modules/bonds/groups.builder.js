@@ -1,9 +1,9 @@
 'use strict';
 
-let GerencialGroup = require('./gerencialGroup')
-let accentFold  = require('../util/accent-fold');
+let Group = require('./groups')
+let accentFold  = require('../../util/accent-fold');
 
-class  GerencialBuilder{
+class  GroupBuilder{
 
    groupOfAssets(bonds){  
 
@@ -36,7 +36,7 @@ class  GerencialBuilder{
 
         bonds.forEach(bond => {
         
-            let newGroup = new GerencialGroup(bond.tipo,bond.emissor,bond.vencimentoDiasCorridos,bond.indexador);
+            let newGroup = new Group(bond.tipo,bond.emissor,bond.vencimentoDiasCorridos,bond.indexador);
 
             if(! (newGroup.getHash() in groups)){
                 groups[newGroup.getHash() ] = [];
@@ -92,4 +92,4 @@ class  GerencialBuilder{
 
 }
 
-module.exports = GerencialBuilder;
+module.exports = GroupBuilder;

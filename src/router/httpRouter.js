@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 //controllers
-const bondController = require("../controllers/bondController");
+const bondController = require("../modules/bonds/bonds.controller");
 
 //verbos
 router.get('/', (req, res, next) => {
